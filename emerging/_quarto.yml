@@ -1,0 +1,33 @@
+# https://quarto.org/docs/books/book-structure.html
+
+project:
+  type: book
+
+
+book:
+  title: "Emerging Issues"
+  author: "Don Boyd"
+  date: today
+
+  - part: disasters.qmd
+    chapters: 
+      - ch1.qmd
+  - part: shocks.qmd
+    chapters:
+      - objects.qmd
+      - notation.qmd
+      - modifying.qmd
+      - environments.qmd
+  - part: technology.qmd
+  - part: demographics.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+
+
+
