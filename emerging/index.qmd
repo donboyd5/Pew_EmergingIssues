@@ -1,5 +1,7 @@
 # Preface {.unnumbered}
 
-This is a Quarto book.
+To come.
 
-To learn more about Quarto books visit <https://quarto.org/docs/books>.
+<!-- # Preface {.unnumbered} -->
+
+<!-- TBD. -->

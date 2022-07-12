@@ -2,32 +2,56 @@
 
 project:
   type: book
-
+  output-dir: _report  
 
 book:
-  title: "Emerging Issues"
+  title: "Emerging Challenges for State Budgets"
   author: "Don Boyd"
   date: today
+  date-format: long
+  chapters:
+    - index.qmd
 
-  - part: disasters.qmd
-    chapters: 
-      - ch1.qmd
-  - part: shocks.qmd
-    chapters:
-      - objects.qmd
-      - notation.qmd
-      - modifying.qmd
-      - environments.qmd
-  - part: technology.qmd
-  - part: demographics.qmd
+    - part: "Project Information"  # - project.qmd
+      chapters:
+        - project_agreement.qmd
+        - project_questions.qmd
+    
+    - part: disasters.qmd
+      chapters: 
+        - disasters_intro.qmd
+        
+    - part: "Economic Shocks" # shocks.qmd
+      chapters:
+        - shocks_intro.qmd
+        
+    - part: "Technological Change" # technology.qmd
+      chapters:
+        - tech_intro.qmd
+        
+    - part: "Demographic Change" # demographics.qmd
+      chapters:
+        - demo_intro.qmd
+        
+    - summary.qmd
+    - references.qmd
+    
 
 bibliography: references.bib
 
+execute: 
+  cache: true
+  echo: false
+  warning: false
+  include: false
+
 format:
   html:
+    number-sections: true
+    css: style.css  # for div datatables wrapper
     theme: cosmo
-  pdf:
-    documentclass: scrreprt
+  # pdf:
+  #   documentclass: scrreprt
 
 
 
