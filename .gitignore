@@ -3,3 +3,6 @@
 .Rdata
 .httr-oauth
 .DS_Store
+/methods_review/_site/
+/methods_review/.quarto/
+/methods_review/test/

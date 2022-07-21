@@ -1,0 +1,76 @@
+---
+title: "Emerging Challenges for State Budgets"
+subtitle: "Methods Review"
+author: "Don Boyd"
+date: today
+date-format: long
+format:
+  revealjs: 
+    slide-number: true
+    chalkboard: 
+      buttons: false
+    preview-links: auto
+    # logo: images/quarto.png
+    css: styles.css
+    # footer: <https://quarto.org>
+# resources:
+  # - demo.pdf
+---
+
+<!-- quarto publish netlify index.qmd -->
+
+# Introduction
+
+## Goals
+
+<!-- ::: incremental -->
+
+1.  Examine *emerging* risks likely to become increasingly important to state budgets over the next 5-10 years, in four major cateogies:
+
+-   Economic shocks
+
+-   Demographic changes
+
+-   Disasters
+
+-   Technological changes
+
+2.  Examine options for reducing risks, and for managing and mitigating negative consequences of risks.
+
+<!-- ::: -->
+
+## Overview of Process
+
+For each category
+
+-   Identify key emerging risks
+
+-   Describe risks - causes, what we may expect in the future, and how these risks may vary across the country and way
+
+-   Examine potential solutions, including options for management and mitigation
+
+
+
+# Appendix
+
+## Project Agreement (1)
+
+::: r-fit-text
+Start Date: June 30, 2022 End Date: June 30, 2024 *Note: We intend to agree on dates that will complete the project considerably sooner than the end date.*
+
+In collaboration with state fiscal health leadership, Provider shall identify key emerging challenges that will affect state budgets in the next five to 10 years and write a white paper for Pew.
+
+a.  Prior to conducting the research, participate in a meeting (Methods Review Meeting), either via teleconference or in-person as designated by Pew, to discuss the proposed research design and methodology (Research Design).
+
+b.  Research and analyze an emerging challenge, or challenges, that will affect state budgets in the medium to long-term and propose solutions to manage and mitigate these challenges.
+
+c.  Provide Pew with a draft white paper in electronic format two (2) months prior to End Date \[i.e., April 30, 2024 or sooner, TBD\], along with copies of all cited and referenced source documents, and annotated datasets and statistical code, with instructions that explain the analytic steps and code, so that Pew may conduct its own quality control review.
+
+:::
+
+## Project Agreement (2)
+::: r-fit-text
+d.  Within three (3) months of Start Date \[i.e., Sept 30, 2022 or sooner, TBD\], Provider will suggest to Pew the names and professional profiles of at least two (2) external peer reviewers. External peer reviewers shall not be personnel of Provider and shall be agreed upon by the Parties in advance. Provider will incorporate feedback from external peer reviewers, provided to Provider by Pew, into the white paper, and provide Pew with a document containing the rationale for any feedback that was not incorporated into the revised white paper.
+
+e.  Provide Pew with the final white paper in electronic format on or before the End Date \[or sooner, TBD\]. The final white paper shall incorporate any feedback Pew provided on the draft white paper.
+:::

@@ -1,0 +1,161 @@
+---
+title: "The Role of Legislatures in Public Financial Management"
+subtitle: "Informing the Budget Process: Tools and Methodologies, Analysis and Reports"
+author: Don Boyd
+institute: Rockefeller College Center for Policy Research
+date: June 2, 2022
+date-format: long
+section-title-footnotes: "Endnotes"
+format:
+  revealjs: 
+    slide-number: true
+    chalkboard: 
+      buttons: false
+    preview-links: auto
+    css: styles.css
+    footer: "Public Financial Management Training: Parliament of Zimbabwe"
+    reference-location: document
+bibliography: bibliography.bib
+---
+
+# Introduction
+
+## My Background
+
+<!-- ::: incremental -->
+
+-   *6 years:* analyst and director of tax analysis staff, NY Assembly Ways & Means Committee
+-   *7 years:* head economic/revenue analysis, NY budget office
+    -   forecasting & management
+    -   develop & negotiate proposals (within bounds)
+    -   present analysis to legislative staff, rating agencies
+    -   \~ 18 staff (6 economists, 12 tax analysts)
+-   *30 years:* analysis of state/local finances in 50 states
+
+<!-- ::: -->
+
+::: notes
+speaker notes
+:::
+
+## Your Background?
+
+-   What do you do?
+-   What analytic challenges do you face?
+
+<!--# this is a comment -->
+
+## Discussion Topics
+
+Morning
+
+-   Institutional arrangements and roles
+-   Revenue forecasting
+-   Building analytic capability in the legislature
+
+Afternoon
+
+-   Data and outside reports
+-   Legislative oversight
+
+Please - ask questions, make comments as we go.
+
+::: notes
+Speaker notes go here.
+:::
+
+# Morning session
+
+# <span style="font-size:.85em;">*Institutional players in the budget process*
+
+</span>
+
+## The executive proposes, the legislature disposes (?)
+
+-   Generally true, but major exceptions[^1]
+
+    -   Arizona, Colorado, New Mexico, Oklahoma and Texas all write budgets
+
+    -   Texas
+
+-   Different legislative roles in different arrangements
+
+-   New York - strong executive budget
+
+    -   Stronger over time
+
+[^1]: @ronaldsnell2008
+
+## NY budget players and influencers
+
+![](images/Stylized%20budget%20players_no%20title.svg)
+
+## Roles staffs play in such a system
+
+-   advisers to policymakers, oversight of executive. Make sure to include examples from other states
+
+-   review and comment on merits of budget proposals and legislation
+
+-   review and monitoring of budget execution
+
+-   implementation of policies
+
+-   review and comment on politically sensitive issues that will arise analysis, modeling, forecasts
+
+-   reports on budget revenue trends, outlook, economic conditions, policy issues
+
+## Legislative-Executive budget relations in the United States
+
+-   Many commonalities, but varies across states, and within states over time over time
+
+    -   For example
+
+-   Who does analysis
+
+    -   Individual committees, each house
+
+    -   Independent legislative group
+
+    -   Comptroller
+
+    -   Joint groups
+
+-   Separation of powers is not pure
+
+    -   Bulgaro form review!
+
+    -   PACB
+
+    -   Letters to legislative leaders - windfall
+
+# Afternoon session
+
+## Topic C
+
+```{=html}
+<!-- Links
+https://lucid.app/documents#/dashboard
+
+https://quarto.org/docs/presentations/revealjs/
+https://quarto.org/docs/reference/formats/presentations/revealjs.html
+https://revealjs.com/layout/ 
+
+
+https://quarto.org/docs/presentations/revealjs/index.html#content-overflow
+## Slide Title {.smaller}
+## Slide Title {.scrollable}
+
+https://quarto.org/docs/presentations/index.html#incremental-lists
+
+-->
+```
+# References group
+
+## Bibliography
+
+::: {#refs}
+:::
+
+---
+nocite:
+---
