@@ -17,60 +17,247 @@ format:
   # - demo.pdf
 ---
 
-<!-- quarto publish netlify index.qmd -->
-
-# Introduction
 
 ## Goals
 
-<!-- ::: incremental -->
+<!-- # Introduction -->
 
-1.  Examine *emerging* risks likely to become increasingly important to state budgets over the next 5-10 years, in four major cateogies:
+```{=html}
+<!-- 
+Agenda
+1.      Explanation of the role of RRS and Methods Review at Pew (3 min, RRS Chair) 
+2.      Introductions of participants in the room and on the phone (3 min, RRS Chair) 
+3.      Presentation of the research question and how it fits into broader 
+        program goals at Pew (4 min, Team/Contractor) 
+4.      Brief summary of the work (5 min, Team/Contractor) 
+5.      Methodological questions and conversation about the project 
+        (40+ min, all participants) 
+6.      Concluding remarks and next steps in the review process (5 min, RRS Chair)
+-->
 
--   Economic shocks
+<!-- 
+::: r-fit-text
+::: 
+-->
+```
+```{=html}
+<!-- 
+https://quarto.org/docs/authoring/markdown-basics.html
+https://quarto.org/docs/presentations/revealjs/advanced.html
 
--   Demographic changes
+Pandoc markdown 
+  https://pandoc.org/MANUAL.html
+  https://pandoc.org/MANUAL.html#pandocs-markdown
+  https://pandoc.org/MANUAL.html#ordered-lists
 
--   Disasters
+quarto render index.qmd
+quarto publish netlify
+quarto publish netlify --no-render
 
--   Technological changes
+::: incremental
+{.r-fit-text}
 
-2.  Examine options for reducing risks, and for managing and mitigating negative consequences of risks.
+-->
+```
+
+::: r-fit-text
+1.  Examine *emerging* risks to state budgets over the next 5-10 years, primarily in four major categories:
+    -   Economic shocks
+    -   Demographic changes
+    -   Climate change and natural disasters
+    -   Technological changes
+2.  Examine options for reducing and managing risks
+
+A broad and *as-deep-as-practical* survey of the terrain, rather than a deep examination of every detail.
+:::
+
+<!-- ::: aside -->
+
+<!-- *See appendix for written agreement.* -->
 
 <!-- ::: -->
 
-## Overview of Process
-
-For each category
-
--   Identify key emerging risks
-
--   Describe risks - causes, what we may expect in the future, and how these risks may vary across the country and way
-
--   Examine potential solutions, including options for management and mitigation
-
-
-
-# Appendix
-
-## Project Agreement (1)
+## Why These Four?
 
 ::: r-fit-text
-Start Date: June 30, 2022 End Date: June 30, 2024 *Note: We intend to agree on dates that will complete the project considerably sooner than the end date.*
+-   All four historically have had major state-budget impacts:
+    -   Recessions, long-term shift toward service economy
 
-In collaboration with state fiscal health leadership, Provider shall identify key emerging challenges that will affect state budgets in the next five to 10 years and write a white paper for Pew.
+    -   Migration, aging population, slowing workforce growth
 
-a.  Prior to conducting the research, participate in a meeting (Methods Review Meeting), either via teleconference or in-person as designated by Pew, to discuss the proposed research design and methodology (Research Design).
+    -   Floods, tornadoes
 
-b.  Research and analyze an emerging challenge, or challenges, that will affect state budgets in the medium to long-term and propose solutions to manage and mitigate these challenges.
+    -   Substitution of electronic goods for physical goods
+-   All four could pose major future challenges:
+    -   Pandemic-related economic shocks, office building vacancies, longer term shifts to WFH
 
-c.  Provide Pew with a draft white paper in electronic format two (2) months prior to End Date \[i.e., April 30, 2024 or sooner, TBD\], along with copies of all cited and referenced source documents, and annotated datasets and statistical code, with instructions that explain the analytic steps and code, so that Pew may conduct its own quality control review.
+    -   Acceleration or changes in aging, workforce, migration patterns
+
+    -   Climate change and natural disasters
+
+    -   Electric and autonomous vehicles, artificial intelligence
+:::
+
+<!-- # Risks -->
+
+------------------------------------------------------------------------
+
+## Main Questions About the Risks
+
+::: r-fit-text
+-   What are the key risk elements (e.g., flooding, fires, other? aging, workforce decline, other?)
+
+-   What *mechanism* makes an economic, demographic, disaster, or technology trend a risk to government finances?
+
+-   How large is the risk? How certain? To what extent might it grow or shrink?
+
+-   How does the risk vary - e.g., across geography, race, age, kind of government? How susceptible are different states and groups?
+:::
+
+## What is the *Mechanism*? Examples...
+
+::: r-fit-text
+-   Economic shock --\> spending slowdown, jobs lost --\> negative impacts on tax revenue, increases in social service spending
+
+-   Demographic shifts (e.g., aging, fertility decline) --\> slowing wage growth, increased social service needs
+
+-   Natural disaster --\> injury, loss of life, loss of property --\> spending to help people, loss of business or personal income and concomitant tax revenue --\> spending to mitigate future losses
+
+-   Technology changes (e.g., electric vehicles) --\> changes in economic behavior --\>
+
+Some shifts may be positive. Implications will differ across states. Risks may interact (e.g., pandemic economic shock and WFH).
+:::
+
+<!-- # Potential Solutions and Responses -->
+
+## Main Questions About Potential Solutions and Responses
+
+::: r-fit-text
+-   What kinds of policy *responses* are available?
+
+-   What kinds of *preparation and mitigation* policies are available?
+
+-   What do we know from research about the effectiveness of these policies?
+
+-   What roles should different levels of government play in responses and preparation?
+
+-   Examples of policies currently being used by state and federal governments
+
+-   Options for governments to consider
+:::
+
+<!-- ------------------------------------------------------------------------ -->
+
+<!-- # Methods and Data -->
+
+## Methods and Data: Overview
+
+-   Analysis of risks will be based primarily on existing research, analysis of data, and analysis of state-specific studies and documents.
+
+-   Analysis of potential solutions and responses will begin with these elements, but will be supplemented with details on selected states.
+
+
+## Analysis of Research, Documents, and Data
+::: r-fit-text
+-   Reviews of academic and think tank research (particularly literature reviews), governmental risk analyses, and planning and policy documents.
+
+-   Review of government documents that report on risks, including budgets and borrowing documents
+
+-   Analysis of data where useful - e.g., databases and studies that attempt to measure susceptibility to climate-change-related disasters, demographic changes and economic risks by state.
+
+-   Email and telephone communication with experts
+:::
+
+## State-Specific Analysis and State Selection
+::: r-fit-text
+
+-   Identify risks first. For each of 4 major risk categories, identify 3 states where the risk is particularly important.
+
+-   For example, for natural disasters, states might be Florida (hurricanes), Oklahoma (tornados), and Oregon (wildfires). Will choose states after initial research, in consultation with Pew.
+
+-   Develop a common set of questions for each risk in consultation with Pew. Focus on how the state is assessing the risk, planning for it, and responding to it, and which levels of government play which roles.
+
+-   Develop preliminary answers to questions from review of state documents and communication with in-state experts. Review with 2 in-state experts in each state.
 
 :::
 
-## Project Agreement (2)
-::: r-fit-text
-d.  Within three (3) months of Start Date \[i.e., Sept 30, 2022 or sooner, TBD\], Provider will suggest to Pew the names and professional profiles of at least two (2) external peer reviewers. External peer reviewers shall not be personnel of Provider and shall be agreed upon by the Parties in advance. Provider will incorporate feedback from external peer reviewers, provided to Provider by Pew, into the white paper, and provide Pew with a document containing the rationale for any feedback that was not incorporated into the revised white paper.
 
-e.  Provide Pew with the final white paper in electronic format on or before the End Date \[or sooner, TBD\]. The final white paper shall incorporate any feedback Pew provided on the draft white paper.
+## Awareness, Mitigation, and Management in Selected States
+::: r-fit-text
+<!-- *How will you measure awareness of issues, what constitutes a preparatory response, what is deemed a "feasible" management approach and mitigation options?* -->
+
+-   Awareness: Do they refer to the risk in budget documents? Do they have in-state organizations that study the risk? Do they have response plans?
+
+-   Mitigation: What actions is the government taking to mitigate risks? What investments, if any, are they making in mitigation? Likely primary source for this information will be budget documents, disclosure documents, and committees and other organizations studying risks.
+
+-   Management: Who is involved in planning for risk? How integrated is this planning with the budget planning process?
+
+-   For each of these, information will be obtained first from planning and related documents in the state, and second through communications with key informants in the states to confirm and elaborate.
 :::
+
+## Effectiveness of Preparation and Mitigation Policies
+
+<!-- *Please provide more information on how effectiveness is being determined and measured consistently? (Context: "What do we know from research about the effectiveness of these policies?")* -->
+
+-   Goal is not to *measure* effectiveness of policies in individual states but to describe what is known about effectiveness of policies that may mitigate impacts of a specific risk, and under what conditions.
+
+-   For example, there is extensive research on flood control policies and under what circumstances different approaches may work best.
+
+
+## Identifying Subject-Matter Experts
+
+::: r-fit-text
+
+-   Two broad groups of subject matter experts:
+
+    -   Experts to help make sure I interpret research on a topic properly and do not miss important issues. Experts in think tanks, academia, and elsewhere  study the individual risks that are the subject of this project, as well as state preparations and responses. I will reach out on an as-needed basis.
+  
+        -   Identify academic, governmental, and private sector researchers who have been prominent in examining and quantifying risks in question. Methods will include reading academic literature reviews, think tank reports, and governmental documents for agencies involved in the issues (e.g., FEMA and NOAA for natural disasters), and talking to previously identified experts.
+  
+    -   Experts in selected states who can confirm, refute, or elaborate on information and conclusions developed from my review of state documents that evaluate risks and describes plans for risks and risk management. I intend to reach out to 2 experts in each of 3 states, in each of the 4 risk areas.
+
+        -   Identify experts in consultation with Pew and with officials in organizations knowledgeable about state budgets such as NASBO and NCSL.
+
+-   Pew has conducted research on several risks included in this project, and I will seek their advice, and their recommendations for both kinds of experts.
+
+:::
+
+
+<!-- ### Selected examples -->
+
+<!-- Transportation and Climate Initiative (TCI): a regional collaboration of 13 Northeast and Mid-Atlantic states and the District of Columbia that seeks to improve transportation, develop the clean energy economy and reduce carbon emissions from the transportation sector. [@TransportationClimateInitiative] -->
+
+<!-- -   Maryland Comptroller's analysis of demographic risks: Identified mechanisms such as impact of population aging on productivity, and slowing workforce growth on wages, in turn affecting tax revenue. -->
+
+<!-- -   Census Bureau Community Resilience Estimates: "Community resilience is the capacity of individuals and households within a community to absorb, endure, and recover from the impacts of a disaster." Estimates currently focus on pandemic, and draw data from the ACS, the National Health Interview Survey, and other sources, using small-area estimation techniques. For pandemic risk assessment, the estimates included measures of health risks, language barriers, crowding, and disability. These estimates could be helpful in examining public health risks. Variants could be useful for other risks.[@CommunityResilienceEstimates2020] -->
+
+
+
+<!-- ------------------------------------------------------------------------ -->
+
+<!-- # Bibliography -->
+
+<!-- ::: {#refs} -->
+<!-- ::: -->
+
+<!-- # Appendix -->
+
+<!-- ## Project agreement (scroll) {.scrollable} -->
+
+<!-- Start Date: June 30, 2022\ -->
+
+<!-- End Date: June 30, 2024\ -->
+
+<!-- *Note: We intend to agree on dates that will complete the project sooner than the end date.* -->
+
+<!-- In collaboration with state fiscal health leadership, Provider shall identify key emerging challenges that will affect state budgets in the next five to 10 years and write a white paper for Pew. -->
+
+<!-- a.  Prior to conducting the research, participate in a meeting (Methods Review Meeting), either via teleconference or in-person as designated by Pew, to discuss the proposed research design and methodology (Research Design). -->
+
+<!-- b.  Research and analyze an emerging challenge, or challenges, that will affect state budgets in the medium to long-term and propose solutions to manage and mitigate these challenges. -->
+
+<!-- c.  Provide Pew with a draft white paper in electronic format two (2) months prior to End Date \[i.e., April 30, 2024 or sooner, TBD\], along with copies of all cited and referenced source documents, and annotated datasets and statistical code, with instructions that explain the analytic steps and code, so that Pew may conduct its own quality control review. -->
+
+<!-- d.  Within three (3) months of Start Date \[i.e., Sept 30, 2022 or sooner, TBD\], Provider will suggest to Pew the names and professional profiles of at least two (2) external peer reviewers. External peer reviewers shall not be personnel of Provider and shall be agreed upon by the Parties in advance. Provider will incorporate feedback from external peer reviewers, provided to Provider by Pew, into the white paper, and provide Pew with a document containing the rationale for any feedback that was not incorporated into the revised white paper. -->
+
+<!-- e.  Provide Pew with the final white paper in electronic format on or before the End Date \[or sooner, TBD\]. The final white paper shall incorporate any feedback Pew provided on the draft white paper. -->

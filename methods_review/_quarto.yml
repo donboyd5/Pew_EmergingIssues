@@ -1,2 +1,12 @@
 project:
   type: website
+
+
+# bibliography: _review.bib
+# nocite: |
+#   @*
+  
+# quarto publish netlify --no-render
+# quarto publish netlify --no-browser --no-prompt
+# quarto publish netlify --no-render --no-browser --no-prompt  
+  

@@ -3,6 +3,7 @@
 .Rdata
 .httr-oauth
 .DS_Store
+/emerging/.quarto/
 /methods_review/_site/
 /methods_review/.quarto/
 *.css
@@ -10,6 +11,7 @@
 *.doc*
 *.html
 *.ics
+*.js
 *.pdf
 *.png
 *.tmp
