@@ -5,4 +5,13 @@
 .DS_Store
 /methods_review/_site/
 /methods_review/.quarto/
-/methods_review/test/
+*.css
+*.csv
+*.doc*
+*.html
+*.ics
+*.pdf
+*.png
+*.tmp
+*.xl*
+*.zip
