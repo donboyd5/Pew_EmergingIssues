@@ -45,6 +45,11 @@ book:
 # bibliography: _bibliography.bib
 # suppress-bibliography: false
 
+bibliography: [disasters/_disasters.bib,
+               demographics/_demographics.bib,
+               econshocks/_econshocks.bib,
+               technology/_technology.bib]
+
 execute: 
   include: false
   eval: true
