@@ -1,4 +1,5 @@
 ---
+suppress-bibliography: false  
 bibliography: _disasters.bib
 nocite: |
   @*

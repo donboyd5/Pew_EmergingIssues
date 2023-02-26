@@ -15,7 +15,7 @@ book:
     - part: "Climate Change and Disasters"
       chapters: 
         - disasters/disasters_intro.qmd
-      #  - disasters/disasters_references.qmd
+        # - disasters/disasters_references.qmd
         
     - part: "Economic Shocks"
       chapters:
@@ -42,8 +42,30 @@ book:
 # filters:
 #   - section-bibliographies
   
+#  bibliography: [disasters/_disasters.bib, econshocks/_econshocks.bib]
+
+bibliography: [disasters/_disasters.bib,
+               demographics/_demographics.bib,
+               econshocks/_econshocks.bib,
+               technology/_technology.bib]
+nocite: |
+  @*
+
+
+# filters:
+#   - section-bibliographies
+# bibliography: _bibliography.bib
+# reference-section-title: References
+# citeproc: false
+
+
 # bibliography: _bibliography.bib
 # suppress-bibliography: false
+
+# bibliography: [disasters/_disasters.bib,
+#                demographics/_demographics.bib,
+#                econshocks/_econshocks.bib,
+#                technology/_technology.bib]
 
 execute: 
   include: false

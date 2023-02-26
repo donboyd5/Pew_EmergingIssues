@@ -1,17 +1,3 @@
----
-bibliography: [disasters/_disasters.bib,
-               demographics/_demographics.bib,
-               econshocks/_econshocks.bib,
-               technology/_technology.bib]
-
-suppress-bibliography: false
-
-nocite: |
-  @*
-  
----
-
-
 # Bibliography {.unnumbered}
 
 ::: {#refs}

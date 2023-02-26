@@ -12,6 +12,8 @@ How large is the risk? How certain? To what extent might it grow or shrink?
 
 How does the risk vary - e.g., across geography, race, age, kind of government? How susceptible are different states and groups?
 
+
+
 ### Elements
 
 -   Natural disasters in general
