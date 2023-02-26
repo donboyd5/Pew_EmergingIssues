@@ -1,0 +1,10 @@
+---
+bibliography: _demographics.bib
+nocite: |
+  @*
+---
+
+## Section references
+
+::: {#refs}
+:::

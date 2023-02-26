@@ -2,7 +2,7 @@
 title: "Emerging Challenges for State Budgets"
 subtitle: "Methods Review"
 author: "Don Boyd"
-date: today
+date: December 8, 2022 # today
 date-format: long
 format:
   revealjs: 
@@ -68,7 +68,8 @@ quarto publish netlify --no-render
     -   Technological changes
 2.  Examine options for reducing and managing risks
 
-A broad and *as-deep-as-practical* survey of the terrain, rather than a deep examination of every detail.
+A broad and *as-deep-as-practical* survey of the terrain, rather than a deep examination of every detail. Depth of coverage of the four issues won’t necessarily be identical.
+
 :::
 
 <!-- ::: aside -->
@@ -123,7 +124,7 @@ A broad and *as-deep-as-practical* survey of the terrain, rather than a deep exa
 
 -   Natural disaster --\> injury, loss of life, loss of property --\> spending to help people, loss of business or personal income and concomitant tax revenue --\> spending to mitigate future losses
 
--   Technology changes (e.g., electric vehicles) --\> changes in economic behavior --\>
+-   Technology changes (e.g., electric vehicles) --\> changes in economic behavior, such as less purchasing of motor fuel --\> reduction in motor fuel tax revenue.
 
 Some shifts may be positive. Implications will differ across states. Risks may interact (e.g., pandemic economic shock and WFH).
 :::
@@ -173,11 +174,11 @@ Some shifts may be positive. Implications will differ across states. Risks may i
 
 -   Identify risks first. For each of 4 major risk categories, identify 3 states where the risk is particularly important.
 
--   For example, for natural disasters, states might be Florida (hurricanes), Oklahoma (tornados), and Oregon (wildfires). Will choose states after initial research, in consultation with Pew.
+-   For example, for natural disasters, states might be Florida (hurricanes), Oklahoma (tornadoes), and Oregon (wildfires). Will choose states after initial research, in consultation with Pew.
 
 -   Develop a common set of questions for each risk in consultation with Pew. Focus on how the state is assessing the risk, planning for it, and responding to it, and which levels of government play which roles.
 
--   Develop preliminary answers to questions from review of state documents and communication with in-state experts. Review with 2 in-state experts in each state.
+-   Develop preliminary answers to questions from review of state documents and communication with in-state experts. Review with 2 in-state experts in each state. Reviews will be targeted to specific issues; I do not contemplate formal interviews.
 
 :::
 
@@ -214,7 +215,7 @@ Some shifts may be positive. Implications will differ across states. Risks may i
   
         -   Identify academic, governmental, and private sector researchers who have been prominent in examining and quantifying risks in question. Methods will include reading academic literature reviews, think tank reports, and governmental documents for agencies involved in the issues (e.g., FEMA and NOAA for natural disasters), and talking to previously identified experts.
   
-    -   Experts in selected states who can confirm, refute, or elaborate on information and conclusions developed from my review of state documents that evaluate risks and describes plans for risks and risk management. I intend to reach out to 2 experts in each of 3 states, in each of the 4 risk areas.
+    -   Experts in selected states who can confirm, refute, or elaborate on information and conclusions developed from my review of state documents that evaluate risks and describe plans for risks and risk management. I intend to reach out to 2 experts in each of 3 states, in each of the 4 risk areas.
 
         -   Identify experts in consultation with Pew and with officials in organizations knowledgeable about state budgets such as NASBO and NCSL.
 

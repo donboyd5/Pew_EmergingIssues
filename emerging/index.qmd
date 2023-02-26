@@ -1,7 +1,51 @@
-# Preface {.unnumbered}
+# Project information {.unnumbered}
 
-To come.
+## Links
 
-<!-- # Preface {.unnumbered} -->
+-   [Zotero library](https://www.zotero.org/groups/4931858/pew_emerging_budget_issues/library) -- send request for invite to [donboyd5\@gmail.com](mailto:donboyd5@gmail.com)
+
+-   [Google folder](https://drive.google.com/drive/folders/14Ly5J5iO6XFf0BiMOMrtFKDVUNPzuHnD?usp=share_link)
+
+    -   [State summary spreadsheet](https://docs.google.com/spreadsheets/d/1OeBxM4WFNRRyy7UayuLEAvQUhePHHM4ovpjPbguMYuE/edit?usp=share_link) (details to come)
+
+    -   [Notes on states](https://docs.google.com/document/d/1PfBd-kffcaxhi0oXnTb0YKzDtPwLzrl1e0eaAObxxFo/edit?usp=share_link) (details to come)
 
 <!-- TBD. -->
+
+## Goals
+
+-   Examine emerging risks to state budgets over the next 5-10 years, primarily in four major categories:
+
+    -   Economic shocks
+
+    -   Demographic changes
+
+    -   Climate change and natural disasters
+
+    -   Technological changes
+
+-   Examine options for reducing and managing risks
+
+A broad and as-deep-as-practical survey of the terrain, rather than a deep examination of every detail. Depth of coverage of the four issues won't necessarily be identical.
+
+## Main Questions About the Risks
+
+-   What are the key risk elements (e.g., flooding, fires, other? aging, workforce decline, other?)
+
+-   What *mechanism* makes an economic, demographic, disaster, or technology trend a risk to government finances?
+
+-   How large is the risk? How certain? To what extent might it grow or shrink?
+
+-   How does the risk vary - e.g., across geography, race, age, kind of government? How susceptible are different states and groups?
+
+## State-Specific Analysis and State Selection
+
+-   For each of 4 major risk categories, identify 3 states where the risk is particularly important.
+
+    -   Climate change:
+
+-   For example, for natural disasters, states might be Florida (hurricanes), Oklahoma (tornadoes), and Oregon (wildfires). Will choose states after initial research, in consultation with Pew.
+
+-   Develop a common set of questions for each risk in consultation with Pew. Focus on how the state is assessing the risk, planning for it, and responding to it, and which levels of government play which roles.
+
+-   Develop preliminary answers to questions from review of state documents and communication with in-state experts. Review with 2 in-state experts in each state. Reviews will be targeted to specific issues; I do not contemplate formal interviews.

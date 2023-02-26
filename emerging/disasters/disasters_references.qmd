@@ -1,0 +1,10 @@
+---
+bibliography: _disasters.bib
+nocite: |
+  @*
+---
+
+## Section references
+
+::: {#refs}
+:::

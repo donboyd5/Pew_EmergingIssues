@@ -12,38 +12,49 @@ book:
   chapters:
     - index.qmd
 
-    - part: "Project Information"  # - project.qmd
-      chapters:
-        - project_agreement.qmd
-        - project_questions.qmd
-    
-    - part: disasters.qmd
+    - part: "Climate Change and Disasters"
       chapters: 
-        - disasters_intro.qmd
+        - disasters/disasters_intro.qmd
+      #  - disasters/disasters_references.qmd
         
-    - part: "Economic Shocks" # shocks.qmd
+    - part: "Economic Shocks"
       chapters:
-        - shocks_intro.qmd
+        - econshocks/econshocks_intro.qmd
+      #  - econshocks/econshocks_references.qmd
         
-    - part: "Technological Change" # technology.qmd
+    - part: "Technological Change"
       chapters:
-        - tech_intro.qmd
+        - technology/tech_intro.qmd
+      #  - technology/tech_references.qmd
         
-    - part: "Demographic Change" # demographics.qmd
+    - part: "Demographic Change"
       chapters:
-        - demo_intro.qmd
+        - demographics/demo_intro.qmd
+      #  - demographics/demo_references.qmd
         
     - summary.qmd
     - references.qmd
     
-
-bibliography: references.bib
+    - part: "Appendix"
+      chapters:
+        - project_agreement.qmd
+        
+# filters:
+#   - section-bibliographies
+  
+# bibliography: _bibliography.bib
+# suppress-bibliography: false
 
 execute: 
-  cache: true
-  echo: false
-  warning: false
   include: false
+  eval: true
+  echo: false
+  error: false
+  warning: false
+  message: false  # not sure if allowed
+  note: false  # not sure if allowed
+  cache: true  
+  freeze: auto  # during global project renders, re-render only when source changes  
 
 format:
   html:
@@ -52,6 +63,16 @@ format:
     theme: cosmo
   # pdf:
   #   documentclass: scrreprt
+
+editor_options: 
+  chunk_output_type: console
+
+# quarto publish netlify --no-render
+# quarto publish netlify --no-browser --no-prompt
+# quarto publish netlify --no-render --no-browser --no-prompt
+# quarto publish netlify --no-browser --no-prompt
+# https://boyd-pew-emerging.netlify.app/
+
 
 
 

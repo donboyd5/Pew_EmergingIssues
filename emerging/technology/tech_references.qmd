@@ -1,0 +1,10 @@
+---
+bibliography: _technology.bib
+nocite: |
+  @*
+---
+
+## Section references
+
+::: {#refs}
+:::
