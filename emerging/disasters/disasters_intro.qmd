@@ -12,27 +12,31 @@ How large is the risk? How certain? To what extent might it grow or shrink?
 
 How does the risk vary - e.g., across geography, race, age, kind of government? How susceptible are different states and groups?
 
-
-
 ### Elements
 
 -   Natural disasters in general
 
-The National Centers for Environmental Information (NCEI), an agency within the National Oceanic and Atmospheric Administration (NOAA), tracks the cost of environmental disasters, including hurricanes and other tropical cyclones, severe storms, drought, floods, wildfires, crop freezes, and other natural disaster risks.[^1]
+The National Centers for Environmental Information (NCEI), an agency within the National Oceanic and Atmospheric Administration (NOAA), tracks the cost of environmental disasters, including hurricanes and other tropical cyclones, severe storms, drought, floods, wildfires, crop freezes, and other natural disaster risks.[^disasters_intro-1]
 
-[^1]: Both are in the U.S. Department of Commerce.
+[^disasters_intro-1]: Both are in the U.S. Department of Commerce.
+
+NCEI takes into account estimates of insured and uninsured losses from damage to physical assets such as buildings and their contents, infrastructure, and vehicles; crop, livestock, and timber losses; disaster restoration and wildfire suppression costs; and business interruption losses. The estimates do not include losses related to natural assets, health care, or values associated with loss of life.
 
 Hurricanes vs. tornadoes: according to [NOAA (March 2021)](https://www.spc.noaa.gov/faq/tornado/#Damage):
 
 > How does the damage from tornadoes compare to that of hurricanes? The differences are in scale. Even though winds from the strongest tornadoes far exceed that from the strongest hurricanes, hurricanes typically cause much more damage individually and over a season, and over far bigger areas. Economically, tornadoes cause about a tenth as much damage per year, on average, as hurricanes. Hurricanes tend to cause much more overall destruction than tornadoes because of their much larger size, longer duration and their greater variety of ways to affect property. The destructive core in hurricanes can be tens of miles across, last many hours and damage structures through storm surge and rainfall-caused flooding, as well as from wind. Tornadoes, in contrast, tend to be a few hundred yards in diameter, last for minutes and primarily cause damage from their extreme winds.
 
+EM-DAT - number of events in U.S. 2000-2022, average deaths and economic damage per event, and total deaths and economic damage, in \$k; sorted by mean damage. Notice \# storms, mean deaths drought and extreme temperature.
+
+![](images/image-1551858194.png)
+
 ### Magnitude, likelihood, and variation in the risks
 
 #### Earthquakes
 
-Alaska is the most earthquake-prone state; it has experienced a magnitude 7.0 earthquake almost every year and a magnitude 8.0 earthquake every 13 years, on average, since 1900. Alaskan earthquakes can trigger damaging tsunamis, which can be particularly threatening for Alaska, Washington, Oregon, California, and Hawaii. California has the greatest earthquake risk, because the state has frequent earthquakes that affect a dense built environment and a large population.[^2]
+Alaska is the most earthquake-prone state; it has experienced a magnitude 7.0 earthquake almost every year and a magnitude 8.0 earthquake every 13 years, on average, since 1900. Alaskan earthquakes can trigger damaging tsunamis, which can be particularly threatening for Alaska, Washington, Oregon, California, and Hawaii. California has the greatest earthquake risk, because the state has frequent earthquakes that affect a dense built environment and a large population.[^disasters_intro-2]
 
-[^2]: @rowanNationalEarthquakeHazards2021
+[^disasters_intro-2]: @rowanNationalEarthquakeHazards2021
 
 ## Potential management and mitigation solutions
 
@@ -57,7 +61,6 @@ Alaska is the most earthquake-prone state; it has experienced a magnitude 7.0 ea
 [@bloetscherAdaptationFloridaUrban2017]
 
 @bloetscherAdaptationFloridaUrban2017 says such and such
-
 
 -   In 2017 Gov. Charlie Crist created the Florida Governor's Action Team on Energy and Climate Change by [executive order](https://www.fsec.ucf.edu/en/media/enews/2007/pdf/07-128-actionteam.pdf). Gov. Rick Scott appears not to have continued (check)
 

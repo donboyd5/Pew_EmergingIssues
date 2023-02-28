@@ -1,0 +1,46 @@
+# Data details
+
+## National Risk Index
+
+<https://www.fema.gov/flood-maps/products-tools/national-risk-index>
+
+<https://hazards.fema.gov/nri/data-resources#gdbDownload>
+
+> The National Risk Index is a dataset and online tool to help illustrate the U.S. communities most at risk for 18 natural hazards: Avalanche, **Coastal Flooding**, Cold Wave, Drought, **Earthquake**, Hail, **Heat Wave**, **Hurricane**, Ice Storm, Landslide, Lightning, Riverine Flooding, Strong Wind, Tornado, Tsunami, Volcanic Activity, **Wildfire**, and Winter Weather. The National Risk Index provides relative Risk Index scores and ratings based on data for Expected Annual Loss due to natural hazards, Social Vulnerability, and Community Resilience. Separate scores and ratings are also provided for Expected Annual Loss, Social Vulnerability, and Community Resilience. For the Risk Index and Expected Annual Loss, scores and ratings can be viewed as a composite score for all hazards or individually for each of the 18 hazard types.
+
+The National Risk Index provides relative Risk Index scores and ratings based on data for [Expected Annual Loss](https://hazards.fema.gov/nri/expected-annual-loss) due to natural hazards, [Social Vulnerability](https://hazards.fema.gov/nri/social-vulnerability), and [Community
+Resilience](https://hazards.fema.gov/nri/community-resilience). Separate scores and ratings are also provided for each component: Expected Annual Loss, Social Vulnerability, and Community Resilience. For the Risk Index and Expected Annual Loss, scores and ratings can be viewed as a composite score for all hazards or individually for each of the 18 hazard types. You can explore all scores and ratings using the interactive National Risk Index map.
+
+Sources for Expected Annual Loss data include: Arizona State University's (ASU) Center for Emergency Management and Homeland Security (CEMHS), California Department of Conservation, California Geological Survey, California Office of Emergency Services, Colorado Avalanche Information Center, CoreLogic's Flood Services, Federal Emergency Management Agency (FEMA), Humanitarian Data Exchange (HDX), Iowa State University's Iowa Environmental Mesonet, National Aeronautics and Space Administration's (NASA) Cooperative Open Online Landslide Repository (COOLR), National Earthquake Hazards Reduction Program (NEHRP), National Oceanic and Atmospheric Administration's National Centers for Environmental Information (NCEI), National Oceanic and Atmospheric Administration's National Hurricane Center, National Oceanic and Atmospheric Administration's National Weather Service (NWS), National Oceanic and Atmospheric Administration's Office for Coastal Management, National Oceanic and Atmospheric Administration's Storm Prediction Center, Oregon Department of Geology and Mineral Industries, Smithsonian Institution's Global Volcanism Program, State of Hawaii's Office of Planning's Statewide GIS Program, U.S. Army Corps of Engineers' Cold Regions Research and Engineering Laboratory (CRREL), U.S. Department of Agriculture's (USDA) National Agricultural Statistics Service (NASS), U.S. Forest Service's Fire Modeling Institute's Missoula Fire Sciences Lab, U.S. Forest Service's National Avalanche Center (NAC), U.S. Geological Survey (USGS), U.S. Geological Survey's Landslide Hazards Program, United Nations Office for Disaster Risk Reduction (UNDRR), University of Alaska -- Fairbanks' Alaska Earthquake Center, University of Nebraska-Lincoln's National Drought Mitigation Center (NDMC), University of Southern California's Tsunami Research Center, and Washington State Department of Natural Resources.
+
+Data for Social Vulnerability and Community Resilience are provided by University of South Carolina's Hazards and Vulnerability Research Institute (HVRI).
+
+### Risk index overall
+
+![](images/image-1409665616.png)
+
+![](images/image-798636762.png)
+
+### Expected annual loss
+
+4.3. Expected Annual Loss (EAL)
+
+(From technical documentation)
+
+The EAL for each Census tract or county is the average economic loss in dollars resulting from natural hazards each year. EAL is computed for each hazard type and only quantifies loss for relevant consequence types (i.e., buildings, population, or agriculture). For example, many hazard types only significantly impact buildings and population, so the loss to agriculture is not included in the computation. However, the EAL for Drought only quantifies the damage to agriculture (crops and livestock) in its computation. Agriculture is considered a relevant consequence type for hazard types where it has historically contributed greater than 1% of the total reported losses.
+
+All loss is quantified as a dollar amount. While building and agriculture losses are quantified in dollars in the source data, **population loss is quantified as the number of fatalities and injuries and must be converted to ensure all EAL values use a common unit of measurement. Population loss is monetized into a population equivalence value using a Value of Statistical Life (VSL) approach in which each fatality or ten injuries is treated as \$7.6 million of economic loss, an inflation-adjusted VSL used by FEMA.**7 To **adjust for inflation**, all historic losses are converted to 2020 dollars.
+
+#### Earthquakes
+
+![](images/image-316264658.png)
+
+## EM-DAT
+
+<https://www.emdat.be/welcome>
+
+> In 1988, the Centre for Research on the Epidemiology of Disasters (CRED) launched the Emergency Events Database (EM-DAT). EM-DAT was created with the initial support of the World Health Organisation (WHO) and the Belgian Government.
+>
+> The main objective of the database is to serve the purposes of humanitarian action at national and international levels. The initiative aims to rationalise decision making for disaster preparedness, as well as provide an objective base for vulnerability assessment and priority setting.
+>
+> EM-DAT contains essential core data on the occurrence and effects of over 22,000 mass disasters in the world from 1900 to the present day. The database is compiled from various sources, including UN agencies, non-governmental organisations, insurance companies, research institutes and press agencies.

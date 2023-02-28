@@ -15,6 +15,7 @@ book:
     - part: "Climate Change and Disasters"
       chapters: 
         - disasters/disasters_intro.qmd
+        - disasters/disasters_state_mitigation_plans.qmd
         # - disasters/disasters_references.qmd
         
     - part: "Economic Shocks"
@@ -37,6 +38,8 @@ book:
     
     - part: "Appendix"
       chapters:
+        - data.qmd
+        - notes.qmd
         - project_agreement.qmd
         
 # filters:

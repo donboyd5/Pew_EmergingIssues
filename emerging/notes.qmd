@@ -1,0 +1,67 @@
+# Notes
+
+## Pew
+
+### How states pay
+
+The Pew Charitable Trusts. "How States Pay for Natural Disasters in an Era of Rising Costs." The Pew Charitable Trusts, May 2020. https://www.pewtrusts.org/-/media/assets/2020/05/how-states-pay-for-natural-disasters-in-an-era-of-rising-costs.pdf.
+
+Everything below is a quote or paraphrase unless noted.
+
+Although catastrophes with large federal government responses capture the most public attention, state governments play an oft-overlooked role in paying for natural disasters. When the costs from natural disasters such as storms, earthquakes, and wildfires exceed a local government's capacity to respond, states must be ready to step in with resources, personnel, and financial support for affected areas. And for larger disasters, states can request a presidential declaration, which makes federal funds available to supplement state and local resources.
+
+In addition to meeting people's **immediate** needs in the aftermath of disasters, states fund programs that help communities **rebuild over time**, repair state-owned and other critical infrastructure, and contribute to **long-term preparedness and risk-reduction** efforts to help communities become less vulnerable to future disasters. Even in major disasters, states often must **pay upfront for costs** that are later partially or fully reimbursed by the federal government.
+
+5 strategies: five budgeting tools that the Government Accountability Office and previous Pew research had identified as common natural disaster-funding mechanisms: statewide disaster accounts, rainy day funds, supplemental appropriations, transfer authority, and state agency budgets. The researchers also looked at states' use of insurance to protect themselves from losses associated with damage to their own property and assets.
+
+1.  46 states and the district have a **disaster account** to cover costs incurred by state and sometimes local governments
+
+2.  35 states and the district may use **rainy day or reserve funds**---savings designed to help manage unexpected revenue shortfalls or spending demands---to cover disaster-related costs.
+
+3.  Every state and the district can use **supplemental appropriations** to fill shortfalls caused by disasters.
+
+4.  42 states and the district designate an official or entity with **transfer authority**---the power to move funds within state government---for disaster purposes. In most instances, the authorized officials can transfer needed resources with little or no additional legislative action. In 24 states, the governor assumes this power as part of an emergency declaration; in six, a council or commission made up of executive and sometimes legislative officials can move funds; in 10, that ability is delegated to a state agency; and in 11 of the 42 states, plus the district, multiple officials must approve at least some transfer requests
+
+5.  Every state and the district permit **agencies to use their own budgets** for disaster needs
+
+**Localities are typically the first responders and source of money; state and federal resources come into play as the scale of destruction and the costs increase.**
+
+Robert T. Stafford Disaster Relief and Emergency Assistance Act, P.L. 93-288 as amended (2016), https://www.fema.gov/medialibrary/ assets/documents/15271. The Stafford Act, which governs the majority of federal disaster assistance programs, covers "natural catastrophe\[s\] (including any hurricane, tornado, storm, high water, wind-driven water, tidal wave, tsunami, earthquake, volcanic eruption, landslide, mudslide, snowstorm, or drought), or regardless of cause, any fire, flood, or explosions" anywhere in the United States. For a description of the process through which states receive federal assistance under the act, see The Pew Charitable Trusts, "What We Don't Know About State Spending on Natural Disasters Could Cost Us" (2018), 3-4, https://www.pewtrusts.org/en/researchand- analysis/reports/2018/06/19/what-we-dont-know-about-state-spending-on-natural-disasters-could-cost-us.
+
+#### Insurance
+
+In addition to budgeting tools, at least 42 states and the district employ insurance to protect state-owned and, occasionally, locally owned assets, such as real estate and infrastructure, from disaster losses. In 27 states and the district, an office of risk management or insurance administers these policies, while in seven others the responsibility falls to the department of administration or administrative services.
+
+States may purchase insurance from the private sector, or they may self-insure by committing to pay for damage to state assets using state funds. More than 21 states and the district use a combination of commercial insurance and selfinsurance to help manage disaster risk....At least 25 states and the district purchase commercial insurance for state property, thereby transferring some natural disaster risk to the private sector.
+
+At least 36 states and the district self-insure state-owned properties for disaster costs...In general, self-insurance funds help states set aside money for potential costs...
+
+#### Methodology
+
+Pew reviewed the relevant literature and identified two major sources of information about state budgeting for disasters: a 2015 GAO report that used semistructured interviews with 10 states to identify common budgeting mechanisms and a 2015 NASBO report on state budget processes that includes information about disaster specific accounts. Additionally, a 2017 Pew report identified states where disasters may be a permissible use of rainy day funds.
+
+### What We Don't Know
+
+"What We Don't Know About State Spending on Natural Disasters Could Cost Us." The Pew Charitable Trusts, June 19, 2018. https://www.pewtrusts.org/-/media/assets/2018/06/statespendingnaturaldisasters_v4.pdf
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+| ##### The 4 Phases of a Disaster                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
++=====================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================+
+| -   **Mitigation:** Steps to reduce or eliminate the harmful consequences of disasters, such as retrofitting buildings and infrastructure, buying out property, establishing state hazard mitigation plans, building tornado safe rooms, and implementing building safety codes.                                                                                                                                                                                                                                    |
+|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| -   **Preparedness:** A continuous process of planning, training, and organizing to identify threats, determine vulnerabilities, and muster the resources to deal with disasters when they strike. These may include contracting before an event, reaching agreements on mutual aid, inventorying state and local resources, raising public awareness and creating outreach campaigns, implementing readiness exercises, establishing warning systems, and drawing up state response and recovery plans.            |
+|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| -   **Response:** Activities that address the immediate direct effects of a disaster, particularly by limiting loss of life, personal injury, and property damage, such as search and rescue, emergency food and shelter, medical care, shutting off contaminated water sources, and damage assessment.                                                                                                                                                                                                             |
+|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| -   **Recovery:** Short- and long-term activities designed to restore communities to normal or better conditions. Right after a disaster, this includes returning telecommunications and utility systems to minimum operating standards, managing debris, and adding staff for government assistance activities. In the post-disaster period, which can last several years, actions include reconstructing public infrastructure, providing redevelopment loans and legal assistance, and rebuilding communities.\* |
+|                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| \* Malcolm E. Baird, \"The \'Phases\' of Emergency Management: Background Paper,\" University of Memphis (2010), table 1, 16--19, <http://www.memphis.edu/ifti/pdfs/cait_phases_of_emergency_mngt.pdf>.                                                                                                                                                                                                                                                                                                             |
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+![](images/image-1785572546.png)
+
+From federal fiscal years 2005 to 2014, all 50 states and the District of Columbia experienced disasters severe enough to trigger a federal emergency or major disaster declaration, including floods, hurricanes, severe storms, wildfires, and blizzards. Wyoming had the fewest, with just three declarations, and Oklahoma topped the list at 36.5 A declaration can unlock an array of federal assistance from many departments and agencies. More than 300 federal programs across 17 departments---including Homeland Security, which houses FEMA; Defense; Housing and Urban Development; Transportation; and Agriculture---together spent an average of \$25.5 billion a year from 2005 to 2014 on disaster assistance after adjusting for inflation.
+
+During the same period, federal support to states through the largest of these programs, FEMA's PA program for infrastructure reconstruction, ranged from \$9 million in Wyoming to \$15 billion in Louisiana.7 Further, eight of the most expensive years on record for the PA program were in the decade from 2007 to 2016.
+
+![](images/image-381789249.png)
