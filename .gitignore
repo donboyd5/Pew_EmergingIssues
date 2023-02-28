@@ -3,11 +3,14 @@
 .Rdata
 .httr-oauth
 .DS_Store
-/emerging/.quarto/
-/methods_review/_site/
-/methods_review/.quarto/
+emerging/.quarto/
+emerging/_freeze/
+emerging/_report/
+methods_review/_site/
+methods_review/.quarto/
 *.css
 *.csv
+*.DAT
 *.doc*
 *.html
 *.ics
@@ -15,5 +18,6 @@
 *.pdf
 *.png
 *.tmp
-*.xl*
+*.xls
+*.xlsx
 *.zip
