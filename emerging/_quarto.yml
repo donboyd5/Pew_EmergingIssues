@@ -1,9 +1,23 @@
-# https://quarto.org/docs/books/book-structure.html
-
 project:
   type: book
   output-dir: _report  
+  
+editor_options: 
+  chunk_output_type: console
 
+editor:
+  markdown:
+    canonical: true  
+  
+format:
+  html:
+    number-sections: true
+    toc-depth: 5
+    theme: cosmo
+    # css: style.css  # for div datatables wrapper
+  # pdf:
+  #   documentclass: scrreprt  
+  
 book:
   title: "Emerging Challenges for State Budgets"
   author: "Don Boyd"
@@ -11,49 +25,54 @@ book:
   date-format: long
   chapters:
     - index.qmd
-
     - part: "Climate Change and Disasters"
       chapters: 
         - disasters/disasters_intro.qmd
         - disasters/disasters_state_mitigation_plans.qmd
         # - disasters/disasters_references.qmd
-        
     - part: "Economic Shocks"
       chapters:
         - econshocks/econshocks_intro.qmd
       #  - econshocks/econshocks_references.qmd
-        
     - part: "Technological Change"
       chapters:
         - technology/tech_intro.qmd
       #  - technology/tech_references.qmd
-        
     - part: "Demographic Change"
       chapters:
         - demographics/demo_intro.qmd
       #  - demographics/demo_references.qmd
-        
     - summary.qmd
     - references.qmd
-    
     - part: "Appendix"
       chapters:
         - data.qmd
         - notes.qmd
         - project_agreement.qmd
+
+bibliography: _bibliography.bib
+nocite: |
+  @*
         
 # filters:
 #   - section-bibliographies
   
 #  bibliography: [disasters/_disasters.bib, econshocks/_econshocks.bib]
 
-bibliography: [disasters/_disasters.bib,
-               demographics/_demographics.bib,
-               econshocks/_econshocks.bib,
-               technology/_technology.bib]
-nocite: |
-  @*
+# bibliography: [disasters/_disasters.bib,
+#                demographics/_demographics.bib,
+#                econshocks/_econshocks.bib,
+#                technology/_technology.bib]
 
+# https://quarto.org/docs/books/book-structure.html
+
+execute:
+  echo: false
+  message: false  # not sure if allowed
+  warning: false
+  note: false  # not sure if allowed
+  freeze: auto  # during global project renders, re-render only when source changes
+  
 
 # filters:
 #   - section-bibliographies
@@ -70,34 +89,12 @@ nocite: |
 #                econshocks/_econshocks.bib,
 #                technology/_technology.bib]
 
-execute: 
-  include: false
-  eval: true
-  echo: false
-  error: false
-  warning: false
-  message: false  # not sure if allowed
-  note: false  # not sure if allowed
-  cache: true  
-  freeze: auto  # during global project renders, re-render only when source changes  
 
-format:
-  html:
-    number-sections: true
-    css: style.css  # for div datatables wrapper
-    theme: cosmo
-  # pdf:
-  #   documentclass: scrreprt
 
-editor_options: 
-  chunk_output_type: console
 
 # quarto publish netlify --no-render
 # quarto publish netlify --no-browser --no-prompt
 # quarto publish netlify --no-render --no-browser --no-prompt
 # quarto publish netlify --no-browser --no-prompt
 # https://boyd-pew-emerging.netlify.app/
-
-
-
 

@@ -1,3 +1,9 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
 # Climate Change and Natural Disasters
 
 ## Discussion of the risk
@@ -12,13 +18,156 @@ How large is the risk? How certain? To what extent might it grow or shrink?
 
 How does the risk vary - e.g., across geography, race, age, kind of government? How susceptible are different states and groups?
 
-### Elements
+```{r}
+#| label: setup
+#| eval: true
+#| include: false
+
+#| fig-width: 8
+# #| fig-height: 8
+
+dnri <- here::here("data", "natural_disasters", "nri")
+
+source(here::here("r", "libraries.r"))
+# source(here::here("r", "libraries_ts.r"))
+# source(here::here("r", "constants.r"))
+# source(here::here("r", "functions.r"))
+
+nri <- readRDS(path(dnri, "nri_numeric.rds"))
+hazlabels <- readRDS(path(dnri, "hazlabels.rds"))
+
+# hazlabels <- nri |> 
+#   select(hazard, hazlabel) |> 
+#   distinct()
+
+
+
+# ---
+# output: html_document
+# editor_options: 
+#   chunk_output_type: console
+# ---
+
+
+```
+
+### Key Risk Elements
+
+The Federal Emergency Management Agency (FEMA) defines natural hazards as "... environmental phenomena that have the potential to impact societies and the human environment. These should not be confused with other types of hazards, such as manmade hazards. For example, a flood resulting from changes in river flows is a natural hazard, whereas flooding due to a dam failure is considered a manmade hazard." (@zuzakNationalRiskIndex2021)
+
+FEMA has constructed a National Risk Index (NRI) database with estimates of the risks that states, counties, and Census tracts face for 18 different natural hazards. The database includes a hazard if at least half of the FEMA-required state hazard mitigation plans include the hazard, or if it is regionally significant, defined as "having the capacity to cause widespread, catastrophic damage, such as Hurricane, Tsunami, and Volcanic Activity" even if not included in a majority of state plans. (@zuzakNationalRiskIndex2021)
+
+The figure below shows in the table at top the 18 natural hazards included in the NRI database, and in the bar chart at bottom the number of states that include any of 29 natural or human-made hazards in their FEMA mitigation plan. (FEMA collapses the full set of included hazards into the 18 categories.)
+
+![Hazards included in state hazard mitigation plans.](images/image-31705419.png)
+
+For each hazard in the NRI database, FEMA has estimated for each state, county, and Census tract the exposure to risk and the expected annual loss (insured and uninsured) from the hazard. For most risks it also includes estimates of the expected frequency of hazard events. The estimates are based on historical data and extensive modeling, and the methodology has been subject to extensive review. FEMA notes, however, that while the database is useful for planning and for broad national comparisons, some users may have access to more accurate local data. (@zuzakNationalRiskIndex2021)
+
+One advantage of these data is that unlike several other hazard databases, the NRI database includes estimates of the "statistical" value of injury and loss of life.
+
+```{r}
+#| label: major-risks-prep
+#| eval: true
+#| include: false
+
+
+losstab1 <- nri |> 
+  filter(losstype %in% c("ealb", "ealpe", "eala", "ealt")) |> 
+  # sum all states
+  summarise(pop=sum(pop), value=sum(value, na.rm=TRUE), .by=c(hazard, losstype))|>  
+  pivot_wider(names_from = losstype) |> 
+  arrange(desc(ealt)) |> 
+  mutate(hazard=ifelse(ealt>=1e9, hazard, "other")) |> 
+  summarise(pop=first(pop),
+            across(starts_with("eal"),
+                   ~ sum(.x, na.rm=TRUE)),
+            .by=c(hazard))
+losstab1
+
+losstots <- losstab1 |> 
+  summarise(pop=first(pop), 
+            across(starts_with("eal"),
+                   ~ sum(.x, na.rm=TRUE))) |> 
+  mutate(hazard="total")
+losstots
+
+tabdata <- bind_rows(losstab1, losstots) |> 
+  mutate(ealtpc=ealt / pop,
+         poploss=ealpe / 7600000) |> 
+  left_join(hazlabels, by = join_by(hazard)) |> 
+  select(hazard, hazlabel, eala, ealb, ealpe, ealt, ealtpc, poploss)
+tabdata
+
+```
+
+```{r}
+#| label: major-risks-tab
+#| eval: true
+#| include: true
+
+
+tab <- tabdata |> 
+  select(-hazard) |> 
+  gt() |> 
+  # tab_header(
+  #   title = html("Estimated Annual Loss From Natural Disasters"),
+  #   subtitle = html("Major Hazards")
+  # ) |>
+  tab_spanner(columns = c(eala, ealb, ealpe, ealt),
+              label="Estimated loss, billions of 2020 $") |>
+  cols_label(hazlabel=html("Hazard"),
+             eala = html("Agriculture"),
+             ealb = html("Buildings"),
+             ealpe = html("Population equivalence"),
+             ealt = html("Total"),
+             ealtpc = html("Total per capita"),
+             poploss = html("Population loss (estimated number)")) |>
+  fmt_number(columns=c(eala, ealb, ealpe, ealt),
+             scale=1e-9,
+             decimals=2) |> 
+  fmt_currency(columns=c(eala, ealb, ealpe, ealt),
+               rows=c(1, nrow(tabdata)),
+               scale=1e-9,
+               decimals=2)|> 
+  fmt_number(columns=c(ealtpc),
+             # scale=1e-9,
+             decimals=1) |> 
+  fmt_number(columns=c(poploss),
+             # scale=1e-9,
+             decimals=0) |>   
+  fmt_currency(columns=c(ealtpc),
+               rows=c(1, nrow(tabdata)),
+               # scale=1e-9,
+               decimals=1)|> 
+  # fmt_percent(columns=rentpct, decimals=1) |> 
+  gtExtras::gt_highlight_rows(rows = nrow(tabdata),  # needs gtExtras
+                    fill="grey97") |>
+  # tab_footnote(
+  #   footnote = "Calculated by FEMA using a Value of Statistical Life (VSL) approach in which each fatality or ten injuries is treated as $7.6 million of economic loss.",
+  #   locations = cells_column_labels(
+  #     columns = c(ealpe, poploss)
+  #   )
+  # ) |> 
+  # tab_footnote(
+  #   footnote = "Heat waves, lightning, ice storms, and cold waves account for 75% of the other category.",
+  #   locations = cells_stub(rows=nrow(tabdata))
+  # ) |> 
+  tab_source_note(source_note="Source: FEMA, National Risk Index Database")
+
+# for now, cannot use tab_header or tab_footer, something is broken in gt()
+
+tab
+
+# gtsave(tab, here::here("emerging", "results", "nri_hazards.png"), zoom=2, expand=10)
+
+
+```
 
 -   Natural disasters in general
 
-The National Centers for Environmental Information (NCEI), an agency within the National Oceanic and Atmospheric Administration (NOAA), tracks the cost of environmental disasters, including hurricanes and other tropical cyclones, severe storms, drought, floods, wildfires, crop freezes, and other natural disaster risks.[^disasters_intro-1]
+The National Centers for Environmental Information (NCEI), an agency within the National Oceanic and Atmospheric Administration (NOAA), tracks the cost of environmental disasters, including hurricanes and other tropical cyclones, severe storms, drought, floods, wildfires, crop freezes, and other natural disaster risks.[^1]
 
-[^disasters_intro-1]: Both are in the U.S. Department of Commerce.
+[^1]: Both are in the U.S. Department of Commerce.
 
 NCEI takes into account estimates of insured and uninsured losses from damage to physical assets such as buildings and their contents, infrastructure, and vehicles; crop, livestock, and timber losses; disaster restoration and wildfire suppression costs; and business interruption losses. The estimates do not include losses related to natural assets, health care, or values associated with loss of life.
 
@@ -30,13 +179,47 @@ EM-DAT - number of events in U.S. 2000-2022, average deaths and economic damage 
 
 ![](images/image-1551858194.png)
 
+### Expected annual loss by state
+
+```{r}
+
+
+
+```
+
 ### Magnitude, likelihood, and variation in the risks
 
 #### Earthquakes
 
-Alaska is the most earthquake-prone state; it has experienced a magnitude 7.0 earthquake almost every year and a magnitude 8.0 earthquake every 13 years, on average, since 1900. Alaskan earthquakes can trigger damaging tsunamis, which can be particularly threatening for Alaska, Washington, Oregon, California, and Hawaii. California has the greatest earthquake risk, because the state has frequent earthquakes that affect a dense built environment and a large population.[^disasters_intro-2]
+![](images/image-554267415.png)
 
-[^disasters_intro-2]: @rowanNationalEarthquakeHazards2021
+Alaska is the most earthquake-prone state; it has experienced a magnitude 7.0 earthquake almost every year and a magnitude 8.0 earthquake every 13 years, on average, since 1900. Alaskan earthquakes can trigger damaging tsunamis, which can be particularly threatening for Alaska, Washington, Oregon, California, and Hawaii. California has the greatest earthquake risk, because the state has frequent earthquakes that affect a dense built environment and a large population.[^2]
+
+[^2]: @rowanNationalEarthquakeHazards2021
+
+#### Tornadoes
+
+![](images/image-555288659.png)
+
+We also look at frequency.
+
+![](images/image-703887152.png)
+
+#### Riverine flooding
+
+![](images/image-1752456911.png)
+
+#### Hurricanes
+
+![](images/image-199837600.png)
+
+#### Drought
+
+![](images/image-1635980881.png)
+
+#### Wildfires
+
+![](images/image-1358220465.png)
 
 ## Potential management and mitigation solutions
 

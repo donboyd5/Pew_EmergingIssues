@@ -4,6 +4,7 @@
 .httr-oauth
 .DS_Store
 emerging/.quarto/
+emerging/_extensions/
 emerging/_freeze/
 emerging/_report/
 methods_review/_site/
@@ -17,6 +18,7 @@ methods_review/.quarto/
 *.js
 *.pdf
 *.png
+*.rds
 *.tmp
 *.xls
 *.xlsx

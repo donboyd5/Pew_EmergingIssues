@@ -16,6 +16,7 @@ library(RColorBrewer)
 library(RcppRoll)
 library(fredr)
 library(tidycensus)
+library(skimr)
 
 # boyd libraries
 library(btools)
@@ -37,6 +38,7 @@ library(knitr)
 library(kableExtra)
 library(DT)
 library(gt)
+library(gridExtra)
 library(janitor)
 
 # maps
