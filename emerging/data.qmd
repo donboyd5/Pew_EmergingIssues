@@ -34,6 +34,18 @@ All loss is quantified as a dollar amount. While building and agriculture losses
 
 ![](images/image-316264658.png)
 
+## NCEI
+
+The National Centers for Environmental Information (NCEI), an agency within the National Oceanic and Atmospheric Administration (NOAA), tracks the cost of environmental disasters, including hurricanes and other tropical cyclones, severe storms, drought, floods, wildfires, crop freezes, and other natural disaster risks.[^data-1]
+
+[^data-1]: Both are in the U.S. Department of Commerce.
+
+NCEI takes into account estimates of insured and uninsured losses from damage to physical assets such as buildings and their contents, infrastructure, and vehicles; crop, livestock, and timber losses; disaster restoration and wildfire suppression costs; and business interruption losses. The estimates do not include losses related to natural assets, health care, or values associated with loss of life.
+
+Hurricanes vs. tornadoes: according to [NOAA (March 2021)](https://www.spc.noaa.gov/faq/tornado/#Damage):
+
+> How does the damage from tornadoes compare to that of hurricanes? The differences are in scale. Even though winds from the strongest tornadoes far exceed that from the strongest hurricanes, hurricanes typically cause much more damage individually and over a season, and over far bigger areas. Economically, tornadoes cause about a tenth as much damage per year, on average, as hurricanes. Hurricanes tend to cause much more overall destruction than tornadoes because of their much larger size, longer duration and their greater variety of ways to affect property. The destructive core in hurricanes can be tens of miles across, last many hours and damage structures through storm surge and rainfall-caused flooding, as well as from wind. Tornadoes, in contrast, tend to be a few hundred yards in diameter, last for minutes and primarily cause damage from their extreme winds.
+
 ## EM-DAT
 
 <https://www.emdat.be/welcome>
@@ -43,3 +55,9 @@ All loss is quantified as a dollar amount. While building and agriculture losses
 > The main objective of the database is to serve the purposes of humanitarian action at national and international levels. The initiative aims to rationalise decision making for disaster preparedness, as well as provide an objective base for vulnerability assessment and priority setting.
 >
 > EM-DAT contains essential core data on the occurrence and effects of over 22,000 mass disasters in the world from 1900 to the present day. The database is compiled from various sources, including UN agencies, non-governmental organisations, insurance companies, research institutes and press agencies.
+
+EM-DAT - number of events in U.S. 2000-2022, average deaths and economic damage per event, and total deaths and economic damage, in \$k; sorted by mean damage. Notice \# storms, mean deaths drought and extreme temperature.
+
+![](disasters/images/image-1551858194.png)
+
+### 

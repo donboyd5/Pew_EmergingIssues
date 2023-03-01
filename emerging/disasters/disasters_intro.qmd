@@ -1,7 +1,7 @@
 ---
 output: html_document
 editor_options: 
-  chunk_output_type: console
+  chunk_output_type: inline
 ---
 
 # Climate Change and Natural Disasters
@@ -63,7 +63,7 @@ The figure below shows in the table at top the 18 natural hazards included in th
 
 For each hazard in the NRI database, FEMA has estimated for each state, county, and Census tract the exposure to risk and the expected annual loss (insured and uninsured) from the hazard. For most risks it also includes estimates of the expected frequency of hazard events. The estimates are based on historical data and extensive modeling, and the methodology has been subject to extensive review. FEMA notes, however, that while the database is useful for planning and for broad national comparisons, some users may have access to more accurate local data. (@zuzakNationalRiskIndex2021)
 
-One advantage of these data is that unlike several other hazard databases, the NRI database includes estimates of the "statistical" value of injury and loss of life.
+One advantage of these data is that unlike several other hazard databases, the NRI database includes estimates of the "statistical" value of injury and loss of life. However, the NRI data do not appear to include estimates of business interruption losses, whereas some other data sources appear to. For a discussion of alternative data sources, see the appendix.
 
 ```{r}
 #| label: major-risks-prep
@@ -105,16 +105,15 @@ tabdata
 #| eval: true
 #| include: true
 
-
 tab <- tabdata |> 
   select(-hazard) |> 
   gt() |> 
-  # tab_header(
-  #   title = html("Estimated Annual Loss From Natural Disasters"),
-  #   subtitle = html("Major Hazards")
-  # ) |>
+  tab_header(
+    title = html("Expected Annual Loss From Natural Disasters"),
+    subtitle = html("Major Hazards")
+  ) |>
   tab_spanner(columns = c(eala, ealb, ealpe, ealt),
-              label="Estimated loss, billions of 2020 $") |>
+              label="Expected annual loss, billions of 2020 $") |>
   cols_label(hazlabel=html("Hazard"),
              eala = html("Agriculture"),
              ealb = html("Buildings"),
@@ -142,16 +141,16 @@ tab <- tabdata |>
   # fmt_percent(columns=rentpct, decimals=1) |> 
   gtExtras::gt_highlight_rows(rows = nrow(tabdata),  # needs gtExtras
                     fill="grey97") |>
-  # tab_footnote(
-  #   footnote = "Calculated by FEMA using a Value of Statistical Life (VSL) approach in which each fatality or ten injuries is treated as $7.6 million of economic loss.",
-  #   locations = cells_column_labels(
-  #     columns = c(ealpe, poploss)
-  #   )
-  # ) |> 
-  # tab_footnote(
-  #   footnote = "Heat waves, lightning, ice storms, and cold waves account for 75% of the other category.",
-  #   locations = cells_stub(rows=nrow(tabdata))
-  # ) |> 
+  tab_footnote(
+    footnote = "Calculated by FEMA using a Value of Statistical Life (VSL) approach in which each fatality or ten injuries is treated as $7.6 million of economic loss.",
+    locations = cells_column_labels(
+      columns = c(ealpe, poploss)
+    )
+  ) |>
+  tab_footnote(
+    footnote = "Heat waves, lightning, ice storms, and cold waves account for 75% of the other category.",
+    locations = cells_body(columns = hazlabel, rows = nrow(tabdata) - 1) # cells_stub(rows=nrow(tabdata))
+  ) |>
   tab_source_note(source_note="Source: FEMA, National Risk Index Database")
 
 # for now, cannot use tab_header or tab_footer, something is broken in gt()
@@ -160,29 +159,193 @@ tab
 
 # gtsave(tab, here::here("emerging", "results", "nri_hazards.png"), zoom=2, expand=10)
 
-
 ```
-
--   Natural disasters in general
-
-The National Centers for Environmental Information (NCEI), an agency within the National Oceanic and Atmospheric Administration (NOAA), tracks the cost of environmental disasters, including hurricanes and other tropical cyclones, severe storms, drought, floods, wildfires, crop freezes, and other natural disaster risks.[^1]
-
-[^1]: Both are in the U.S. Department of Commerce.
-
-NCEI takes into account estimates of insured and uninsured losses from damage to physical assets such as buildings and their contents, infrastructure, and vehicles; crop, livestock, and timber losses; disaster restoration and wildfire suppression costs; and business interruption losses. The estimates do not include losses related to natural assets, health care, or values associated with loss of life.
-
-Hurricanes vs. tornadoes: according to [NOAA (March 2021)](https://www.spc.noaa.gov/faq/tornado/#Damage):
-
-> How does the damage from tornadoes compare to that of hurricanes? The differences are in scale. Even though winds from the strongest tornadoes far exceed that from the strongest hurricanes, hurricanes typically cause much more damage individually and over a season, and over far bigger areas. Economically, tornadoes cause about a tenth as much damage per year, on average, as hurricanes. Hurricanes tend to cause much more overall destruction than tornadoes because of their much larger size, longer duration and their greater variety of ways to affect property. The destructive core in hurricanes can be tens of miles across, last many hours and damage structures through storm surge and rainfall-caused flooding, as well as from wind. Tornadoes, in contrast, tend to be a few hundred yards in diameter, last for minutes and primarily cause damage from their extreme winds.
-
-EM-DAT - number of events in U.S. 2000-2022, average deaths and economic damage per event, and total deaths and economic damage, in \$k; sorted by mean damage. Notice \# storms, mean deaths drought and extreme temperature.
-
-![](images/image-1551858194.png)
 
 ### Expected annual loss by state
 
-```{r}
+#### Expected loss in dollars
 
+```{r}
+#| label: major-risks-states-prep
+#| eval: true
+#| include: false
+
+# collapse hazards to get a limited set to use as columns
+hazsums <- nri |> 
+  filter(losstype %in% c("ealt")) |> 
+  # sum over states
+  summarise(toteal=sum(value, na.rm = TRUE), .by=hazard) |> 
+  arrange(desc(toteal)) |> 
+  mutate(rank=row_number())
+# hazsums
+
+
+tabdata <- nri |> 
+  filter(losstype %in% c("ealt")) |> 
+  left_join(hazsums |> select(hazard, rank, toteal),
+            by = join_by(hazard)) |> 
+  mutate(hazard=ifelse(rank<=6, hazard, "other")) |> 
+  # collapse hazards by category and state
+  summarise(toteal=first(toteal), 
+            value=sum(value, na.rm=TRUE), 
+            .by=c(hazard, stname))|>
+  arrange(desc(toteal)) |> 
+  select(-toteal) |> 
+  pivot_wider(names_from = hazard) |> 
+  mutate(ealt = rowSums(across(-stname))) |> 
+  arrange(desc(ealt)) |> 
+  mutate(stname=ifelse(row_number() <= 15, stname, "Other")) |> 
+  summarise(across(erqk:ealt,
+                   ~ sum(.x, na.rm=TRUE)),
+            .by=c(stname)) |> 
+  janitor::adorn_totals()
+tabdata
+
+```
+
+```{r}
+#| label: major-risks-states-tab
+#| eval: true
+#| include: true
+
+# hazlabels
+
+tab <- tabdata |>
+  gt() |> 
+  tab_header(
+    title = html("Expected Annual Loss From Natural Disasters, By State"),
+    subtitle = html("Major Hazards")
+  ) |>
+  tab_spanner(columns = erqk:ealt,
+              label="Expected annual loss, billions of 2020 $") |>
+  cols_label(stname=html("State"),
+             erqk=html("Earthquake"),
+             trnd=html("Tornado"),
+             rfld=html("Riverine Flooding"),
+             hrcn=html("Hurricane"),
+             drgt=html("Drought"),
+             wfir=html("Wildfire"),
+             other=html("Other"),
+             ealt = html("Total")) |>
+  fmt_number(columns=erqk:ealt,
+             scale=1e-9,
+             decimals=2) |> 
+  fmt_currency(columns=erqk:ealt,
+               rows=c(1, nrow(tabdata)),
+               scale=1e-9,
+               decimals=2)|>
+  gtExtras::gt_highlight_rows(rows = nrow(tabdata),  # needs gtExtras
+                    fill="grey97") |>
+  tab_source_note(source_note="Source: FEMA, National Risk Index Database")
+
+tab
+
+
+```
+
+#### Expected loss per capita
+
+```{r}
+#| label: major-risks-states-percap-prep
+#| eval: true
+#| include: false
+
+# collapse total hazards by state to get a limited set of states to include
+hazsumspc_all <- nri |>
+  filter(hazard=="eal", losstype=="valt") |> # total eal for each state
+  mutate(losspc=value / pop) |> 
+  select(stabbr, stname, pop, ealt=value, losspc) |> 
+  arrange(desc(losspc)) |>
+  mutate(rank=row_number())
+# hazsumspc_all -- good - get the top 15 states per capita
+
+# get total population for each state in our group
+pops <- nri |> 
+  summarise(pop=max(pop), .by=stname)  |> 
+  left_join(hazsumspc_all |> select(stname, srank=rank),
+            join_by(stname)) |> 
+  mutate(stname=ifelse(srank<=15, stname, "Other")) |> 
+  summarise(pop=sum(pop),
+            .by=c(stname)) |> 
+  adorn_totals()
+
+hazsumspc_collapse <- nri |> 
+  filter(losstype %in% c("ealt")) |> # total expected annual loss for each hazard type
+  left_join(hazsums |> select(hazard, hrank=rank),
+            by = join_by(hazard)) |> 
+  mutate(hazard=ifelse(hrank<=6, hazard, "other")) |> 
+  left_join(hazsumspc_all |> select(stname, srank=rank),
+            join_by(stname)) |> 
+  mutate(stname=ifelse(srank<=15, stname, "Other")) |> 
+  # collapse hazard eal by category and state
+  summarise(value=sum(value, na.rm=TRUE), 
+            .by=c(hazard, stname))
+
+# sum each hazard over all states and add to the data
+hazpctots1 <- hazsumspc_collapse |> 
+  summarise(value=sum(value, na.rm=TRUE), .by = hazard) |> 
+  mutate(stname="Total")
+
+# sum all hazards for each state
+hazpctots2 <- bind_rows(hazsumspc_collapse,
+                        hazpctots1) |> 
+  summarise(value=sum(value, na.rm=TRUE), .by = stname) |> 
+  mutate(hazard="total")
+
+
+# this is the base data in long form
+hazpc <- bind_rows(hazsumspc_collapse,
+                   hazpctots1,
+                   hazpctots2) |> 
+  left_join(pops, by = join_by(stname)) |> 
+  mutate(losspc=value / pop)
+
+
+# convert to wide
+tabdata <- hazpc |> 
+  select(stname, hazard, losspc) |> 
+  pivot_wider(names_from = hazard, values_from = losspc) |> 
+  mutate(group=case_when(stname=="Total" ~ 3,
+                         stname=="Other" ~ 2,
+                         TRUE ~ 1)) |> 
+  arrange(group, desc(total)) |> 
+  select(stname, erqk, trnd, rfld, hrcn, drgt, wfir, other, total)
+
+```
+
+```{r}
+#| label: major-risks-states-percap-tab
+#| eval: true
+#| include: true
+
+
+tab <- tabdata |>
+  gt() |> 
+  tab_header(
+    title = html("Expected Annual Loss Per Capita From Natural Disasters, By State"),
+    subtitle = html("Major hazards by total expected loss)")
+  ) |>
+  tab_spanner(columns = erqk:total,
+              label="Expected annual loss per capita, 2020 $") |>
+  cols_label(stname=html("State"),
+             erqk=html("Earthquake"),
+             trnd=html("Tornado"),
+             rfld=html("Riverine Flooding"),
+             hrcn=html("Hurricane"),
+             drgt=html("Drought"),
+             wfir=html("Wildfire"),
+             other=html("Other"),
+             total = html("Total")) |>
+  fmt_number(columns=erqk:total,
+             decimals=1) |> 
+  fmt_currency(columns=erqk:total,
+               rows=c(1, nrow(tabdata)),
+               decimals=1)|>
+  gtExtras::gt_highlight_rows(rows = nrow(tabdata),  # needs gtExtras
+                    fill="grey97") |>
+  tab_source_note(source_note="Source: FEMA, National Risk Index Database")
+
+tab
 
 
 ```
@@ -193,9 +356,11 @@ EM-DAT - number of events in U.S. 2000-2022, average deaths and economic damage 
 
 ![](images/image-554267415.png)
 
-Alaska is the most earthquake-prone state; it has experienced a magnitude 7.0 earthquake almost every year and a magnitude 8.0 earthquake every 13 years, on average, since 1900. Alaskan earthquakes can trigger damaging tsunamis, which can be particularly threatening for Alaska, Washington, Oregon, California, and Hawaii. California has the greatest earthquake risk, because the state has frequent earthquakes that affect a dense built environment and a large population.[^2]
+According to the Congressional Research Service:
 
-[^2]: @rowanNationalEarthquakeHazards2021
+> Alaska is the most earthquake-prone state; it has experienced a magnitude 7.0 earthquake almost every year and a magnitude 8.0 earthquake every 13 years, on average, since 1900. Alaskan earthquakes can trigger damaging tsunamis, which can be particularly threatening for Alaska, Washington, Oregon, California, and Hawaii. California has the greatest earthquake risk, because the state has frequent earthquakes that affect a dense built environment and a large population.[^1]
+
+[^1]: @rowanNationalEarthquakeHazards2021
 
 #### Tornadoes
 
@@ -213,6 +378,10 @@ We also look at frequency.
 
 ![](images/image-199837600.png)
 
+![](images/image-2142977548.png)
+
+![](images/image-230795447.png)
+
 #### Drought
 
 ![](images/image-1635980881.png)
@@ -220,6 +389,26 @@ We also look at frequency.
 #### Wildfires
 
 ![](images/image-1358220465.png)
+
+## Economic impacts of disasters
+
+The estimates in the NRI database do not include secondary effects of natural disasters through their impacts on the economy. \[give estimate of approximate size of these effects, drawn from economic literature\]
+
+## Trends and outlook for natural disasters
+
+-   Document the increasing frequency and intensity of certain kinds of disasters. Possible sources include @balaguruIncreasingHurricaneIntensification2022 and @benderModeledImpactAnthropogenic2010
+
+## Will historically-based estimates of expected loss be reasonable predictors of future losses?
+
+## Other items to address
+
+-   How should we think about disaster risk? (expected direct loss, economic loss, single-large event, deaths, ability to withstand disaster)
+
+-   Social vulnerability, community resilience
+
+-   rationales for federal, state, local roles
+
+-   flooding/hurricane/storm linkage (a data interpretation question) - I may need to talk to FEMA about this.
 
 ## Potential management and mitigation solutions
 
@@ -235,11 +424,81 @@ We also look at frequency.
 
 -   Options for governments to consider
 
+### The role of federal, state, and local governments
+
+Federal agencies can provide guidance and support for the development of state and local plans, including technical assistance and advice on strategies, while state and local governments can tailor their plans to the unique risks and resources of their communities. Collaboration between levels of government can help ensure that plans are comprehensive, coordinated, and effective.
+
+During a disaster response, federal agencies can provide additional resources and support to state and local governments, particularly when disasters are large-scale or require specialized expertise or equipment. However, state and local governments should be the primary responders to disasters, as they are typically closest to the affected communities and have a better understanding of local needs and resources.
+
+Federal, state, and local governments can all play important roles in reducing the risks associated with natural hazards. Federal agencies can provide funding, technical assistance, and guidance for mitigation efforts, while state and local governments can identify and implement mitigation strategies that are tailored to their communities.
+
+## The role of FEMA
+
+Under federal regulations, hazard mitigation is "any sustained action taken to reduce or eliminate the long-term risk to human life and property from hazards."[^2]
+
+[^2]: [44 Code of Federal Regulations (CFR) § 201.2 Definitions.](https://www.ecfr.gov/current/title-44/chapter-I/subchapter-D/part-201)
+
+FEMA requires states to prepare State Mitigation Plans. There are two kinds of State Mitigation Plans - a standard plan and an enhanced plan. An enhanced plan typically includes a more extensive risk assessment, more detailed analysis of mitigation strategies, and a more robust evaluation process. In addition, enhanced plans may create opportunities for additional federal funding under the Hazard Mitigation Grant Program (HMGP).
+
+Among other things, FEMA requires a State Mitigation Plan to include:
+
+1.  **Risk Assessment:** A comprehensive analysis of the natural hazards and risks facing the state, including earthquakes, floods, hurricanes, wildfires, and other hazards.
+
+2.  **Capability Assessment:** An evaluation of the state's ability to respond to and recover from these hazards, including the identification of critical infrastructure and the resources necessary to mitigate and respond to disasters.
+
+3.  **Mitigation Strategy:** A plan for reducing the risks associated with natural hazards, including the development of hazard mitigation projects, policies, and regulations.
+
+4.  **Plan Maintenance:** A plan for maintaining and updating the state's mitigation plan over time, including a schedule for revising the plan and a process for monitoring progress.
+
+5.  **Public Involvement:** A plan for engaging with stakeholders and the public in the development and implementation of the mitigation plan, including the identification of key partners and the dissemination of information about the plan.
+
+6.  **Plan Implementation:** A plan for implementing the mitigation strategy, including the allocation of resources, the development of project proposals, and the establishment of partnerships with other organizations and agencies.
+
+7.  **Plan Evaluation:** A process for evaluating the effectiveness of the mitigation plan, including the identification of performance metrics and the development of a plan for monitoring and evaluating progress over time.
+
+See (@federalemergencymanagementagencyStateMitigationPlanning2022)
+
+\[Questions - how do states vary in depth and quality of these plans? do they have other plans that are the "real" plans or are these real, working documents? are they faithful in following these plans? How do states differ in key policy choices, such as responsibilities of the state vs. its localities?\]
+
+## Mitigation
+
+Possible sources:
+
+-   @shuklaClimateChange20222022
+
+-   
+
 ## Study states
 
 -   states and their rationales
 
 ### Florida (hurricanes)
+
+#### The State Mitigation Plan
+
+Florida has an Enhanced State Mitigation Plan, which allows it to gain an additional 5 percentage points of recovery funds under FEMA's Hazard Mitigation Grant Program (HMGP).
+
+![](images/image-1539012720.png)
+
+##### Mitigation
+
+###### Hurricane Loss Mitigation Program (HLMP)
+
+The Hurricane Loss Mitigation Program (HLMP) is a state administered grant and receives \$10 million annually from the Florida Hurricane Catastrophe Trust Fund (Ch. §215.559, Florida Statutes).
+
+Three million dollars is allocated towards the purpose of retrofitting existing facilities that are used as public hurricane shelters. Each year the Division shall prioritize the use of these funds for projects included in the annual report of the Shelter Retrofit Report prepared in accordance with § 252.385(3). The Division is required to give funding priority to projects in regional planning council regions that have shelter deficits and to projects that maximize the use of state funds.
+
+Up to \$3.5 million is to be used to improve the wind resistance of residences through loans, subsidies, grants, demonstration projects, direct assistance, and cooperative programs with local and federal governments. The program is developed in coordination with the Advisory Council whose members consist of representatives from the Florida Association of Counties, the Florida Department of Insurance, the Federation of Manufactured Home Owners, the Florida Manufactured Housing Association, the Florida Insurance Council, and the Florida Home Builders Association.
+
+\$2.8 million is designated for the Mobile Home Tie-Down Program. Based on legislative directive the Florida Division of Emergency Management provides funding for mobile home tie-downs across the state, a program administered by Tallahassee Community College (TCC). By statute, TCC prepares a separate report for the Governor and the Legislature on these directives.
+
+\$700,000 is designated for Hurricane Research to be conducted by Florida International University (FIU) to continue the development of an innovative research of a full-scale structural testing to determine inherent weakness of structures when subjected to categories 1 to 5 hurricane-force winds and rain, leading to new technologies, designs and products.
+
+Through partnering with local housing authorities and non-profit organizations, the Division has been able to promote wind mitigation and provide hazard mitigation upgrades to residents. Funded activities include retrofits, inspections, and construction or modification of building components designed to increase a structure's ability to withstand hurricane-force winds. The Retrofit Program utilizes the Florida Building Code as its standard for all retrofitting.
+
+Grant funds awarded under the HLMP qualify as state financial assistance under the Florida Single Audit Act. See Section 215.971, Florida Statutes. The Catalog of State Financial Assistance number (CSFA#) for HLMP is 31.066. Because the Legislature provides the Division with HLMP funds through the grants and aid appropriation category, eligible proposers under this request for proposal (RPF) include governmental entities, nonprofit organizations, and qualified for-profit organizations; individual homeowners are ineligible to apply.
+
+#### Miscellaneous notes
 
 [@bloetscherAdaptationFloridaUrban2017]
 
@@ -273,11 +532,21 @@ Environmental Risk Factors section:
 
 ### Oklahoma (tornadoes)
 
+#### The State Mitigation Plan
+
+### 
+Miscellaneous notes
+
 Latest OK OS (\$4,120,000, The Oklahoma Development Finance Authority, Oklahoma System of Higher Education, Master Real Property Lease Revenue Bonds, Tax-Exempt Series 2022B, P21626941-P21252966-P21678007.pdf) does not mention tornadoes or climate change as a risk, although it mentions pandemic. Issue size was small, though.
 
 This may reflect the fact that the economic cost of the average hurricane can be 10x the cost of the average tornado. (e.g., this)
 
 ### Oregon (wildfires/earthquakes)
+
+#### The State Mitigation Plan
+
+### 
+Miscellaneous notes
 
 Excerpt from latest GO bond OS (\$39,145,000 State of Oregon General Obligation Bonds, 2022 Series D and Series E, MSRB-P2417080.zip). (no discussion of preparation)
 
