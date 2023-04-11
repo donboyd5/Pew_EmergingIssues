@@ -25,6 +25,7 @@ book:
   date-format: long
   chapters:
     - index.qmd
+    - quarterly_updates.qmd
     - part: "Climate Change and Disasters"
       chapters: 
         - disasters/disasters_intro.qmd

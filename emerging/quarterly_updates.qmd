@@ -1,0 +1,25 @@
+# Quarterly updates
+
+## 2023 Quarter #1
+
+### Project mangement
+
+-   Developed more-detailed list of key questions for each risk area
+
+-   Web page to track overall project development
+
+### Substantive
+
+-   Significant work on climate change risks
+
+    -   Key risk elements fleshed out
+
+        -   Constructed table of expected annual losses for natural disasters in FEMA National Risk Index database - earthquakes, tornadoes, flooding, hurricane, and drought top the list, followed by wildfire
+        -   Constructed tables of expected annual loss by state (CA, TX, FL, LA, and NC top the list), and expected annual loss per-capita by state (SD, LA, NE, ND, and IA at top).
+        -   Excerpted maps based on the National Risk Index database on expected prevalence and expected annual loss for key risks to be analyzed: earthquakes, tornadoes, flooding, hurricane, drought, and wildfire.
+
+    -   Continued review of research on economic and fiscal impacts of risks.
+
+    -   Obtained and began reviewing FEMA-required State Mitigation Plans for the three study states: Florida, Oklahoma, and Oregon.
+
+-   Gathering/review of papers related to the other three risk areas (economic shocks, demographic change, and technological change).
